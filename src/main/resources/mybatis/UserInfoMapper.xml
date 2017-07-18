@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hishamx.mapper.UserInfoPapper">
+
+
+  <sql id="Base_Column_List">
+    uid,name,password,salt,username
+  </sql>
+
+  <select id="findByUsername" resultType="com.hishamx.model.UserInfo" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from user_info WHERE username=#{username};
+  </select>
+
+  <select id="ListfindByUsername" resultType="com.hishamx.model.UserInfo" parameterType="java.lang.String">
+  select
+    <include refid="Base_Column_List" />
+   from user_info WHERE username=#{username};
+  </select>
+
+</mapper>
